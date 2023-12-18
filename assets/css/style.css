@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;700;900&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#map, #players {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#map, .map {
+    z-index: -1;
+}
+
+.stack {
+    position: relative;
+    width: calc( 100vw / 15);
+    height: calc( 100vh / 9);
+    float: left;
+}
+
+.item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.transition {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/**
+ * OUTFITS
+ */
+
+.outfit_1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/outfits/outfit_1.png');
+    background-size: calc(3 * 100%) calc(4 * 100%);
+}
+
+/**
+ * OUTFITS SETTINGS
+ */
+
+.pos_up {
+    background-position: 0px 100%;
+}
+
+.pos_left {
+    background-position: 0px calc(2 * 100%);
+}
+
+.pos_right {
+    background-position: 0px calc(3 * 100%);
+}
+
+.pos_down {
+    background-position: 0px 0px;
+}
+
+/**
+ * EQUIPMENT
+ */
+
+#equipment {
+    position: absolute;
+    right: -20vw;
+    top: 0;
+    width: 20vw;
+    height: 100vh;
+    height: 100%;
+    overflow:hidden;
+    z-index: 1;
+    box-shadow: -1px 0px 8px #000;
+    background-color: #d1c184;
+}
+
+.equipment {
+    width: 100%;
+    height: 100%;
+}
+
+.equipment .space {
+    width: 100%;
+    height: 40%; 
+    display: grid;
+}
+
+.equipment .grid_eq {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.equipment .grid_skill {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+
+.equipment .space .slot {
+    width: 100%;
+    height: 100%;
+    background-color: #644738;
+    box-shadow: inset 3px 3px 5px #000; 
+    filter: grayscale(100%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.equipment .grid_skill .skill_row {
+    margin: 0px;
+    padding: 0 20px;
+    font-size: 21px;
+    font-weight: 600;
+    border-bottom: 1px solid #35252f;
+}
+
+.equipment .grid_skill .skill_title {
+    width: 50%;
+    display: inline-grid;
+    text-transform: capitalize;
+}
+
+.equipment .grid_skill .skill_value {
+    width: 50%;
+    display: inline-grid;
+    text-align: right;
+}
+
+.title {
+    background-color: #35252f;
+    text-align: center;
+    font-weight: 900;
+    padding: 30px 15px;
+    vertical-align: middle;
+    font-size: 30px;
+    color: #ffee9b;
+    max-height: 10vh;
+    text-transform: uppercase;
+}
+
+/**
+ * ARMORY
+ */
+#armory {
+    position: absolute;
+    left: -20vw;
+    top: 0;
+    width: 20vw;
+    height: 100%;
+    overflow:hidden;
+    z-index: 1;
+    box-shadow: 1px 0px 8px #000;
+    background-color: #d1c184;
+}
+
+#armory .armory {
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(10, 1fr);
+}
+
+#armory .slot_row {
+    width: 100%;
+    border-bottom: 1px solid #35252f;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#armory .slot_row .slot {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#armory .slot_row .empty {   
+    filter: grayscale(100%);
+}
+
+#armory .slot_row .background {
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+#armory .slot_row .slot .socket {
+    float: left;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    max-width: 32px;
+    max-height: 32px;
+    margin: 20px;
+    background-color: #ff00ff; /* #644738; */
+    /* box-shadow: inset 3px 3px 5px #000; */
+    box-shadow: 3px 3px 5px #000;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
